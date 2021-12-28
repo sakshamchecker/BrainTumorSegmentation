@@ -26,7 +26,9 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLRO
 from tensorflow.keras import backend as K
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-
+def data_iterator(image_gen, mask_gen):
+    for img, mask in zip(image_gen, mask_gen):
+        yield img, mask
 #Loading Data
 DataPath = "/data"
 
